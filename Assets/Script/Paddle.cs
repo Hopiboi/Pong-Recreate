@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    //Holder
     protected Rigidbody2D rg2D;
 
     public float paddleSpeed = 10f;
