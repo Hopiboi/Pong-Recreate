@@ -30,7 +30,7 @@ public class BallMovement : MonoBehaviour
     }
 
     //Creating Force
-    private void StartingSpeed()
+    public void StartingSpeed()
     {
         //Random in left or right
         float x = Random.value < 0.5f ? -1f : 1f    ;
