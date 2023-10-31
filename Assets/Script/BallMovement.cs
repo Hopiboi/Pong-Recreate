@@ -9,9 +9,6 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rg2D;
 
-
-
-
     private void Start()
     {
         rg2D = GetComponent<Rigidbody2D>();
@@ -21,9 +18,16 @@ public class BallMovement : MonoBehaviour
 
     }
 
+    //constant speed
+    private void FixedUpdate()
+    {
+        rg2D.velocity = rg2D.velocity.normalized * ballSpeed;
+    }
+
     //In case when the ball is not on center
     public void StartingBall()
     {     
+
         rg2D.position = Vector2.zero;
         rg2D.velocity = Vector2.zero;
 
@@ -57,7 +61,6 @@ public class BallMovement : MonoBehaviour
         //Vector3 can be used, but prefered Vector2 because of 2D elements
         rg2D.position = Vector2.zero;
         rg2D.velocity = Vector2.zero;
-
 
         //To start the Force again
         StartingSpeed();

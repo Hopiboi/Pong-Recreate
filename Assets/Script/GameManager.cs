@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int playerScore;
     [SerializeField] private int AiScore;
 
+    //Scoring System
     public void PlayerScores()
     {
         playerScore++;
@@ -35,12 +37,24 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //Resetting
     public void ResetRound()
     {
         this.playerPaddle.ResetPositionPaddle();
         this.aiPaddle.ResetPositionPaddle();
         this.ball.ResettingBall();
-
     }
-    
+
+    //Menu Selector
+
+    public void ClassicLevel()
+    {
+        SceneManager.LoadScene("Classic");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 }
