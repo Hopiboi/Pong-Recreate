@@ -673,16 +673,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3878128103b5a1d4f9059ecdce0b9d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScoreText: {fileID: 1508892577}
-  player2ScoreText: {fileID: 695321003}
+  playerScoreText: {fileID: 0}
   computerScoreText: {fileID: 0}
   ball: {fileID: 1501555012}
   playerPaddle: {fileID: 185004159}
-  player2Paddle: {fileID: 508386402}
   aiPaddle: {fileID: 508386402}
   playerScore: 0
-  player2Score: 0
   AiScore: 0
+  player1ScoreText: {fileID: 1508892577}
+  player2ScoreText: {fileID: 695321003}
+  player1Paddle: {fileID: 185004159}
+  player2Paddle: {fileID: 508386402}
+  player1Score: 0
+  player2Score: 0
+  levelCounter: 2
 --- !u!1 &695321001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1069,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 643331065}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PlayerScores
+        m_MethodName: Player1Scores
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

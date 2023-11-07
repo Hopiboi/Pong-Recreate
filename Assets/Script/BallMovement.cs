@@ -37,11 +37,11 @@ public class BallMovement : MonoBehaviour
     public void StartingSpeed()
     {
         //Random in left or right
-        float x = Random.value < 0.5f ? -1f : 1f    ;
+        float x = Random.value < 0.5f ? -1f : 0.9f    ;
 
         // Down and Up
-        float y = Random.value < 0.5f ? Random.Range(-1f, -.5f):
-                                        Random.Range(0.5f, 1f); // Angle
+        float y = Random.value < 0.5f ? Random.Range(-1f, -.5f): // Down
+                                        Random.Range(0.2f, 0.9f); // Up
         
         
         //adding direction
