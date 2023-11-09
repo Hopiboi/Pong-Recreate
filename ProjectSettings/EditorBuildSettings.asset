@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Horizontal.unity
     guid: ad576d12bdeccb147a9fa4397d6ca729
+  - enabled: 1
+    path: Assets/Scenes/Horizontal Versus.unity
+    guid: b5b71a960e2c4374aa46bfff39d315aa
   m_configObjects: {}

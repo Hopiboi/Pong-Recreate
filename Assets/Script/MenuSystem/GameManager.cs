@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int player1Score;
     [SerializeField] private int player2Score;
 
-
     //Level Counter
     [Header("Level Counter")]
     [SerializeField] int levelCounter;
@@ -66,9 +65,21 @@ public class GameManager : MonoBehaviour
     //Resetting
     public void ResetRound()
     {
-        this.singlePlayerPaddle.ResetPositionPaddle();
-        this.aiPaddle.ResetPositionPaddle();
-        this.ball.ResettingBall();
+
+
+        if (levelCounter == 1)
+        {
+            this.singlePlayerPaddle.ResetPositionPaddle();
+            this.aiPaddle.ResetPositionPaddle();
+            this.ball.ResettingBall();
+        }
+
+        else if (levelCounter == 3)
+        {
+            this.singlePlayerPaddle.ResetPositionPaddleHorizontal();
+            this.aiPaddle.ResetPositionPaddleHorizontal();
+            this.ball.ResettingBall();
+        }
     }
 
     //Versus
@@ -137,7 +148,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        else if (levelCounter == 3)
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                ResetRound();
+                ScoreReset();
+            }
+        }
+
     }
+
 
     //Menu Selector
     public void ClassicLevel()
@@ -153,6 +174,11 @@ public class GameManager : MonoBehaviour
     public void HorizontalLevel()
     {
         SceneManager.LoadScene("Horizontal");
+    }
+
+    public void HorizontalVersusLevel()
+    {
+        SceneManager.LoadScene("Horizontal Versus");
     }
 
     //Button InGame
