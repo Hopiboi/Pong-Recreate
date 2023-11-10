@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public TMPro.TMP_Text singlePlayerScoreText;
     public TMPro.TMP_Text computerScoreText;
 
-    [Header ("GameObjects")]
+    [Header ("Ball GameObject")]
     public BallMovement ball;
+
+    [Header("SinglePlayer")]
     public Paddle singlePlayerPaddle;
     public Paddle aiPaddle;
 
@@ -23,10 +25,14 @@ public class GameManager : MonoBehaviour
     [Header("ScoreText Versus")]
     public TMPro.TMP_Text player1ScoreText;
     public TMPro.TMP_Text player2ScoreText;
+    public TMPro.TMP_Text player3ScoreText;
+    public TMPro.TMP_Text player4ScoreText;
 
     [Header("GameObjects Versus")]
     public Paddle player1Paddle;
     public Paddle player2Paddle;
+    public Paddle player3Paddle;
+    public Paddle player4Paddle;
 
     [Header("Score Number")]
     [SerializeField] private int player1Score;
@@ -35,6 +41,8 @@ public class GameManager : MonoBehaviour
     //Level Counter
     [Header("Level Counter")]
     [SerializeField] int levelCounter;
+
+
 
 
     public void Update()
@@ -101,9 +109,28 @@ public class GameManager : MonoBehaviour
 
     public void ResetRoundVersus()
     {
-        this.player1Paddle.ResetPositionPaddle();
-        this.player2Paddle.ResetPositionPaddle();
-        this.ball.ResettingBall();
+        if (levelCounter == 2)
+        {
+            this.player1Paddle.ResetPositionPaddle();
+            this.player2Paddle.ResetPositionPaddle();
+            this.ball.ResettingBall();
+        }
+
+        else if (levelCounter == 4)
+        {
+            this.player1Paddle.ResetPositionPaddleHorizontal();
+            this.player2Paddle.ResetPositionPaddleHorizontal();
+            this.ball.ResettingBall();
+        }
+
+        else if (levelCounter == 5)
+        {
+            this.player1Paddle.ResetPositionPaddle();
+            this.player2Paddle.ResetPositionPaddle();
+            this.player3Paddle.ResetPositionPaddleHorizontal();
+            this.player4Paddle.ResetPositionPaddleHorizontal();
+        }
+
     }
 
     //Score Reset
@@ -157,6 +184,23 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        else if (levelCounter == 4)
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                ResetRoundVersus();
+                ScoreReset2();
+            }
+        }
+
+        else if (levelCounter == 5)
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                ResetRoundVersus();
+            }
+        }
+
     }
 
 
@@ -179,6 +223,11 @@ public class GameManager : MonoBehaviour
     public void HorizontalVersusLevel()
     {
         SceneManager.LoadScene("Horizontal Versus");
+    }
+
+    public void FourVersusLevel()
+    {
+        SceneManager.LoadScene("Four Versus");
     }
 
     //Button InGame
