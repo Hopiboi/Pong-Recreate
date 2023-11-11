@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pong
+  - P2
+  - P3
+  - P4
+  - P1
   layers:
   - Default
   - TransparentFX

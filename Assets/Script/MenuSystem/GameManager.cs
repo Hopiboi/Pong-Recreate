@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     [Header("Score Number")]
     [SerializeField] private int player1Score;
     [SerializeField] private int player2Score;
+    [SerializeField] private int player3Score;
+    [SerializeField] private int player4Score;
 
     //Level Counter
     [Header("Level Counter")]
@@ -91,21 +93,116 @@ public class GameManager : MonoBehaviour
     }
 
     //Versus
+    //Scoring system to other players
     public void Player1Scores()
     {
-        player1Score++;
-        player1ScoreText.text = player1Score.ToString();
 
-        ResetRoundVersus();
+        if (levelCounter == 2 || levelCounter == 4)
+        {
+            player1Score++;
+            player1ScoreText.text = player1Score.ToString();
+
+            ResetRoundVersus();
+        }
+
+        else if (levelCounter == 5)
+        {
+            if(this.ball.winPlayerNum == 1)
+            {
+                player1Score++;
+                player1ScoreText.text = player1Score.ToString();
+
+                ResetRoundVersus();
+                this.ball.ResetColor();
+            }
+
+        }
+
     }
 
     public void Player2Scores()
     {
-        player2Score++;
-        player2ScoreText.text = player2Score.ToString();
 
-        ResetRoundVersus();
+        if (levelCounter == 2 || levelCounter == 4)
+        {
+            player2Score++;
+            player2ScoreText.text = player2Score.ToString();
+
+            ResetRoundVersus();
+        }
+
+        else if (levelCounter == 5)
+        {
+            if (this.ball.winPlayerNum == 2)
+            {
+                player2Score++;
+                player2ScoreText.text = player2Score.ToString();
+
+                ResetRoundVersus();
+                this.ball.ResetColor();
+            }
+
+        }
     }
+
+    public void Player3Scores()
+    {
+        if (levelCounter == 5)
+        {
+            if (this.ball.winPlayerNum == 3)
+            {
+                player3Score++;
+                player3ScoreText.text = player3Score.ToString();
+
+                ResetRoundVersus();
+                this.ball.ResetColor();
+            }
+
+        }
+    }
+
+    public void Player4Scores()
+    {
+        if (levelCounter == 5)
+        {
+            if (this.ball.winPlayerNum == 4)
+            {
+                player4Score++;
+                player4ScoreText.text = player4Score.ToString();
+
+                ResetRoundVersus();
+                this.ball.ResetColor();
+            }
+        }
+    }
+
+    //when the pong did not change the color
+
+    public void FreeScore()
+    {
+        if (levelCounter == 5)
+        {
+            if (this.ball.winPlayerNum == 0)
+            {
+                player1Score++;
+                player1ScoreText.text = player1Score.ToString();
+
+                player2Score++;
+                player2ScoreText.text = player2Score.ToString();
+
+                player3Score++;
+                player3ScoreText.text = player3Score.ToString();
+
+                player4Score++;
+                player4ScoreText.text = player4Score.ToString();
+
+                ResetRoundVersus();
+                this.ball.ResetColor();
+            }
+        }
+    }
+
+    //Resetting Round for versus
 
     public void ResetRoundVersus()
     {
@@ -129,6 +226,9 @@ public class GameManager : MonoBehaviour
             this.player2Paddle.ResetPositionPaddle();
             this.player3Paddle.ResetPositionPaddleHorizontal();
             this.player4Paddle.ResetPositionPaddleHorizontal();
+            this.ball.ResettingBall();
+            
+            
         }
 
     }
@@ -146,11 +246,33 @@ public class GameManager : MonoBehaviour
 
     public void ScoreReset2()
     {
-        player1Score = 0;
-        player2Score = 0;
+        if (levelCounter == 2 || levelCounter == 4)
+        {
+            player1Score = 0;
+            player2Score = 0;
 
-        player1ScoreText.text = player1Score.ToString();
-        player2ScoreText.text = player2Score.ToString();
+            player1ScoreText.text = player1Score.ToString();
+            player2ScoreText.text = player2Score.ToString();
+        }
+
+        else if (levelCounter == 5)
+        {
+            player1Score = 0;
+            player2Score = 0;
+            player3Score = 0;
+            player4Score = 0;
+
+            player1ScoreText.text = player1Score.ToString();
+            player2ScoreText.text = player2Score.ToString();
+            player3ScoreText.text = player2Score.ToString();
+            player4ScoreText.text = player2Score.ToString();
+        }
+        
+        // player1Score = 0;
+        // player2Score = 0;
+
+        // player1ScoreText.text = player1Score.ToString();
+        // player2ScoreText.text = player2Score.ToString();
     }
 
 
@@ -198,6 +320,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKey(KeyCode.R))
             {
                 ResetRoundVersus();
+                ScoreReset2();
             }
         }
 

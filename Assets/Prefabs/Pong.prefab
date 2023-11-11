@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballSpeed: 6
+  colorBlue: {r: 0, g: 0, b: 1, a: 1}
+  sp: {fileID: 1429651687907617556}

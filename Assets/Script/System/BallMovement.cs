@@ -6,12 +6,15 @@ public class BallMovement : MonoBehaviour
 {
 
     [SerializeField] private float ballSpeed = 200f;
+    [SerializeField] public int winPlayerNum = 0;
 
     private Rigidbody2D rg2D;
+    public SpriteRenderer sp;
 
     private void Start()
     {
         rg2D = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
 
         StartingSpeed();
         StartingBall();
@@ -64,6 +67,42 @@ public class BallMovement : MonoBehaviour
 
         //To start the Force again
         StartingSpeed();
+        
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "P1")
+        {
+            sp.color = Color.blue;
+            winPlayerNum = 1;
+
+        }   
+
+        else if (other.tag == "P2")
+        {
+            sp.color = Color.red;
+            winPlayerNum = 2;
+
+        }
+
+        else if (other.tag == "P3")
+        {
+            sp.color = Color.green;
+            winPlayerNum = 3;
+        }
+
+        else if (other.tag == "P4")
+        {
+            sp.color = Color.yellow;
+            winPlayerNum = 4;
+        }
+    }
+
+    public void ResetColor()
+    {
+        sp.color = Color.white;
+        winPlayerNum = 0;
     }
 
 }
