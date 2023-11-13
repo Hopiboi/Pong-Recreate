@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Four Versus.unity
     guid: 9467ebdb2c957a44fb45fb2460ec8055
   - enabled: 1
-    path: Assets/Scenes/Co op.unity
+    path: Assets/Scenes/TeamCoop.unity
     guid: b27fd7aba2a3b78428d3eb4a0ea2f726
   m_configObjects: {}

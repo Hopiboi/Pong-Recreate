@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     public void Player1Scores()
     {
 
-        if (levelCounter == 2 || levelCounter == 4)
+        if (levelCounter == 2 || levelCounter == 4 || levelCounter == 6)
         {
             player1Score++;
             player1ScoreText.text = player1Score.ToString();
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
     public void Player2Scores()
     {
 
-        if (levelCounter == 2 || levelCounter == 4)
+        if (levelCounter == 2 || levelCounter == 4 || levelCounter == 6)
         {
             player2Score++;
             player2ScoreText.text = player2Score.ToString();
@@ -176,32 +176,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //when the pong did not change the color
-
-    public void FreeScore()
-    {
-        if (levelCounter == 5)
-        {
-            if (this.ball.winPlayerNum == 0)
-            {
-                player1Score++;
-                player1ScoreText.text = player1Score.ToString();
-
-                player2Score++;
-                player2ScoreText.text = player2Score.ToString();
-
-                player3Score++;
-                player3ScoreText.text = player3Score.ToString();
-
-                player4Score++;
-                player4ScoreText.text = player4Score.ToString();
-
-                ResetRoundVersus();
-                this.ball.ResetColor();
-            }
-        }
-    }
-
     //Resetting Round for versus
 
     public void ResetRoundVersus()
@@ -227,8 +201,15 @@ public class GameManager : MonoBehaviour
             this.player3Paddle.ResetPositionPaddleHorizontal();
             this.player4Paddle.ResetPositionPaddleHorizontal();
             this.ball.ResettingBall();
-            
-            
+        }
+
+        else if (levelCounter == 6)
+        {
+            this.player1Paddle.ResetPositionPaddle();
+            this.player2Paddle.ResetPositionPaddle();
+            this.player3Paddle.ResetPositionPaddle();
+            this.player4Paddle.ResetPositionPaddle();
+            this.ball.ResettingBall();
         }
 
     }
@@ -323,6 +304,15 @@ public class GameManager : MonoBehaviour
                 ScoreReset2();
             }
         }
+        
+        else if (levelCounter == 6)
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                ResetRoundVersus();
+                ScoreReset2();
+            }
+        }
 
     }
 
@@ -351,6 +341,11 @@ public class GameManager : MonoBehaviour
     public void FourVersusLevel()
     {
         SceneManager.LoadScene("Four Versus");
+    }
+
+    public void TeamCoopLevel()
+    {
+        SceneManager.LoadScene("TeamCoop");
     }
 
     //Button InGame

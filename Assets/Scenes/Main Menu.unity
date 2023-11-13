@@ -1083,7 +1083,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 326321831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 452030080}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: TeamCoopLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &326321831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,10 +1187,16 @@ MonoBehaviour:
   AiScore: 0
   player1ScoreText: {fileID: 0}
   player2ScoreText: {fileID: 0}
+  player3ScoreText: {fileID: 0}
+  player4ScoreText: {fileID: 0}
   player1Paddle: {fileID: 0}
   player2Paddle: {fileID: 0}
+  player3Paddle: {fileID: 0}
+  player4Paddle: {fileID: 0}
   player1Score: 0
   player2Score: 0
+  player3Score: 0
+  player4Score: 0
   levelCounter: 0
 --- !u!1 &561632759
 GameObject:
