@@ -14,7 +14,7 @@ Team VS <br />
 Controls: <br />
 
 First PLayer = W/S for Vertical Game Mode <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   A/D for Horizontal Game Mode <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A/D for Horizontal Game Mode <br />
 Second PLayer = I/K for Vertical Game Mode <br /> 
               J/L for Horizontal Game Mode <br />
 Third PLayer = UP/DOWN for Vertical Game Mode <br />
