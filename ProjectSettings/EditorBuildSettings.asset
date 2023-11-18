@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeamCoop.unity
     guid: b27fd7aba2a3b78428d3eb4a0ea2f726
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 71935a0d36c49684d9b8d6f62a71e4ef
   m_configObjects: {}
