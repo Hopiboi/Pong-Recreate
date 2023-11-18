@@ -16,8 +16,8 @@ Controls: <br />
 First PLayer = W/S for Vertical Game Mode <br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A/D for Horizontal Game Mode <br />
 Second PLayer = I/K for Vertical Game Mode <br /> 
-              J/L for Horizontal Game Mode <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;J/L for Horizontal Game Mode <br />
 Third PLayer = UP/DOWN for Vertical Game Mode <br />
-              Left/Right for Horizontal Game Mode <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Left/Right for Horizontal Game Mode <br />
 Fouth PLayer = 8/2 for Vertical Game Mode <br />
-              4/6 for Horizontal Game Mode <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4/6 for Horizontal Game Mode <br />
