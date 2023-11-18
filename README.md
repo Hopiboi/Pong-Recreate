@@ -4,7 +4,7 @@ Pong Recreation recreate pong in the past using my understanding to the game and
 Creating other games modes to solidify my understanding:
 
 The game modes are:
-Classic /n
+Classic <br />
 Classic VS
 Horizontal
 HorizontalVS
