@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] int levelCounter;
 
 
-
-
     public void Update()
     {
         ResetGame();
